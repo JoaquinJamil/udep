@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 95%;
+            margin: 0 auto;
+            text-align: left; /* Aligning all content except the clock to the left */
+        }
+        .clock-container {
+            text-align: center; /* Aligning clock to center */
+        }
+        .clock {
+            font-size: 75px;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+        }
+        .left-content, .right-content {
+            flex: 1;
+            padding: 0 10px;
+        }
+        .textbox {
+            width: calc(50%);
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 0px solid #ccc;
+            outline: none;
+            text-align: left;
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: top;
+            height: 25px;
+        }
+        
+        .textboxlong {
+            width: calc(50%);
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 0px solid #ccc;
+            outline: none;
+            text-align: left;
+            font-size: 18px; /* Same font size as .textbox */
+            font-family: Arial, sans-serif; /* Same font family as .textbox */
+            display: inline-block;
+            vertical-align: top;
+            height: 100px; /* Adjust height as needed */
+        }
+        
+        .label-textboxlong {
+            display: inline-block;
+            width: 200px; /* Adjust width as needed */
+            text-align: right;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .picture {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock-container">
+            <div class="clock" id="clock"></div>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <form>
+                    <label for="curso">Curso:</label>
+                    <input type="text" id="curso" class="textbox" required><br>
+                    <label for="profesor">Profesor(a):</label>
+                    <input type="text" id="profesor" class="textbox" required><br>
+                    <label for="evaluacion">Evaluación:</label>
+                    <input type="text" id="evaluacion" class="textbox" required><br>
+                    <label for="fecha">Fecha:</label>
+                    <input type="text" id="fecha" class="textbox" required><br>
+                    <label for="hora_inicio">Hora inicio:</label>
+                    <input type="text" id="hora_inicio" class="textbox" required><br>
+                    <label for="hora_fin">Hora fin:</label>
+                    <input type="text" id="hora_fin" class="textbox" required><br>
+                    <label for="indicaciones">Indicaciones adicionales:</label>
+                    <textarea id="indicaciones" class="textboxlong" required></textarea>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function updateClock() {
+        var now = new Date();
+        var clock = document.getElementById('clock');
+        var hours = ('0' + now.getHours()).slice(-2); // Ensuring two digits for hours
+        var minutes = ('0' + now.getMinutes()).slice(-2); // Ensuring two digits for minutes
+        var seconds = ('0' + now.getSeconds()).slice(-2); // Ensuring two digits for seconds
+        clock.textContent = hours + ':' + minutes + ':' + seconds;
+    }
+    setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
