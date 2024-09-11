@@ -27,10 +27,6 @@
         .content {
             display: flex;
         }
-        .left-content, .right-content {
-            flex: 1;
-            padding: 0 10px;
-        }
         .textbox {
             width: calc(50%);
             padding: 10px;
@@ -45,6 +41,7 @@
             height: 25px;
             background-color: black;
             color: white;
+
         }
         
         .textboxlong {
@@ -78,9 +75,13 @@
             text-align: right;
             margin-right: 10px;
         }
+        
+
+
         .picture {
             width: 100%;
-            max-width: 400px;
+            max-width: 100%; /* Allow the image to take up the full width of its container */
+            height: auto; /* Maintain the aspect ratio */
             display: block;
             margin: 20px auto;
         }
@@ -89,6 +90,17 @@
             display: flex;
             justify-content: space-between;
         }
+        
+        .left-content{
+            flex: 1;
+            padding: 0 10px;
+        }
+        
+        .right-content {
+            flex: 3;
+            padding: 0 10px;
+        }
+
 
     </style>
 </head>
