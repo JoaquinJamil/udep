@@ -13,10 +13,10 @@
         .container {
             max-width: 95%;
             margin: 0 auto;
-            text-align: left;
+            text-align: left; /* Aligning all content except the clock to the left */
         }
         .clock-container {
-            text-align: center;
+            text-align: center; /* Aligning clock to center */
         }
         .clock {
             font-size: 75px;
@@ -24,36 +24,51 @@
         }
         .content {
             display: flex;
-            justify-content: space-between;
         }
-        .left-content {
+        .left-content, .right-content {
             flex: 1;
-            padding-right: 10px;
-        }
-        .right-content {
-            flex: 1;
-            padding-left: 10px;
+            padding: 0 10px;
         }
         .textbox {
-            width: 100%;
+            width: calc(50%);
             padding: 10px;
             margin-bottom: 10px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 0px solid #ccc;
+            outline: none;
+            text-align: left;
             font-size: 18px;
+            display: inline-block;
+            vertical-align: top;
+            height: 25px;
         }
+        
         .textboxlong {
-            width: 100%;
+            width: calc(50%);
             padding: 10px;
             margin-bottom: 10px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
-            font-size: 18px;
-            height: 100px;
+            border: 0px solid #ccc;
+            outline: none;
+            text-align: left;
+            font-size: 18px; /* Same font size as .textbox */
+            font-family: Arial, sans-serif; /* Same font family as .textbox */
+            display: inline-block;
+            vertical-align: top;
+            height: 100px; /* Adjust height as needed */
         }
+        
+        .label-textboxlong {
+            display: inline-block;
+            width: 200px; /* Adjust width as needed */
+            text-align: right;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+
         label {
             display: inline-block;
-            width: 150px;
+            width: 100px;
             text-align: right;
             margin-right: 10px;
         }
@@ -63,11 +78,12 @@
             display: block;
             margin: 20px auto;
         }
-        /* Make sure the form fields and picture split the screen */
+                /* Make sure the form fields and picture split the screen */
         .split-container {
             display: flex;
             justify-content: space-between;
         }
+
     </style>
 </head>
 <body>
@@ -104,9 +120,9 @@
     function updateClock() {
         var now = new Date();
         var clock = document.getElementById('clock');
-        var hours = ('0' + now.getHours()).slice(-2);
-        var minutes = ('0' + now.getMinutes()).slice(-2);
-        var seconds = ('0' + now.getSeconds()).slice(-2);
+        var hours = ('0' + now.getHours()).slice(-2); // Ensuring two digits for hours
+        var minutes = ('0' + now.getMinutes()).slice(-2); // Ensuring two digits for minutes
+        var seconds = ('0' + now.getSeconds()).slice(-2); // Ensuring two digits for seconds
         clock.textContent = hours + ':' + minutes + ':' + seconds;
     }
     setInterval(updateClock, 1000);
