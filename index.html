@@ -23,8 +23,9 @@
             text-align: center; /* Aligning clock to center */
         }
         .clock {
-            font-size: 50px;
+            font-size: 45px;
             margin-bottom: 5px;
+            font-weight: normal; /* This makes the text bold */
         }
         .content {
             display: flex;
@@ -45,20 +46,15 @@
         }
         
         .textbox {
-            width: 250px;
+            width: 350px;
             height: 20px;
         }
 
         .textboxlong {
-            width: 250px;
+            width: 350px;
             height: 150px;
         }
         
-        .textbox2 {
-            width: 250px;
-            height: 30px;
-        }
-
         label {
             display: inline-block;
             width: 100px;
@@ -115,7 +111,7 @@
                     <input type="text" id="evaluacion" class="textbox" required><br>
                     <label for="fecha">Fecha:</label>  
                     <input type="text" id="fecha" class="textbox" required><br>
-                    <!--    <div id="current-date" class="textbox2"></div> <br>    -->
+                    <!--    <div id="current-date" class="textbox"></div> <br>    -->
                     <label for="hora_inicio">Hora inicio:</label>
                     <input type="text" id="hora_inicio" class="textbox" required><br>
                     <label for="hora_fin">Hora fin:</label>
